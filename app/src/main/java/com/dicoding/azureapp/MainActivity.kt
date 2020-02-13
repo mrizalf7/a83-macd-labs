@@ -16,8 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       AppCenter.start(getApplication(), "624b84d3-f43d-4a9a-9f21-cac930cb8676",
-                  Analytics.class, Crashes.class)
+       AppCenter.start(
+            application, "3fd2b99a-4d7d-4d4f-b038-a820ead528b4",
+            Analytics::class.java, Crashes::class.java
+        )
 
         heroes.addAll(HeroesData.listData)
         showRecyclerList()
